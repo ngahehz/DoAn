@@ -1,0 +1,573 @@
+body{
+    width: 100%;
+    font-family: 'Itim';
+    overflow-x: hidden;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#left {
+    width: 18%;
+    height: 100%;
+    background:  linear-gradient( to right, #DC143C, lightsalmon);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    float: left;
+    position: fixed;
+    text-align: center;
+}
+
+#control{
+    padding-right: 20px
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.subcontrol a:hover{
+    color: yellow
+}
+
+.fa-splotch{
+    color: transparent;
+    margin-right: 5px;
+}
+
+h1{
+  background: linear-gradient(to right, yellow, white );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color:transparent;
+}
+
+#left span{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+    font-size: 18px
+}
+
+#left span:hover{
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold
+}
+
+#right{
+    width: 82%;
+    float: right;
+}
+
+#r1{
+    width: 100%;
+    height: 180px;
+    font-size: 50px;
+    justify-content: center; 
+    display: flex; 
+    align-items: center;
+    font-weight: bold;
+    background: linear-gradient(to right, orange, #DC143C );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+
+#r2{
+    width: 100%;
+    text-align: center
+}
+
+#r2_yeucau{
+    font-size: 27px;
+    display: flex;
+    align-items: center; 
+    justify-content: center
+}
+
+#r2yc{
+    font-size: 27px;
+    margin: 10px
+}
+
+#r2yc input{
+    border:none;
+    border-bottom: solid 2px red;
+    font-family: 'Itim';
+    font-size: 20px
+}
+
+#r2_table{
+    width: 100%;
+}
+
+#r2mini{
+    width: 100%;
+    position: relative;
+    height: 50%;
+    color: gray;
+    justify-content: center; 
+    display: flex; 
+    align-items: center;
+}
+
+#r2mini span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+}
+
+#r2mini div{
+    border: solid 3px red;
+    width: 90%;
+    height: 70%;
+    text-align: center;
+    color: black;
+    font-size: 150px;
+}
+
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+th {
+    color:  orangered;
+    font-weight: 500;
+    background: lightcyan
+}
+
+th, td {
+    border: 2px solid black;
+}
+
+tr:hover{
+    background-color:#ddd;
+}
+
+#tongcong{
+    background: skyblue;
+    height: 30px;
+    font-weight: 600
+}
+
+table img{
+    width: 70px;
+    height: 70px;
+}
+
+table form{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    margin: auto
+}
+
+#modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: none;
+}
+
+#overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+#warning,#warning1{
+    height: 100px;
+    width: 200px;
+    margin: 200px auto;
+    border-radius: 15px;
+    position: relative;
+    z-index: 15;
+    animation-name: ani2;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    background-color:white;
+    box-shadow: 0 0 20px 1px black;
+    display: none; 
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 18px;
+}
+
+.acp,.cancle{
+    width: 70px;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Itim';
+    background-image: linear-gradient(to right, orange, #DC143C);
+    border-radius: 6px; 
+    text-transform: uppercase;
+}
+
+#fixProduct{
+    height: 425px;
+    width: 60%;
+    margin: 30px 29%;
+    border-radius: 15px;
+    position: relative;
+    z-index: 15;
+    animation-name: ani2;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    background-color:white;
+    box-shadow: 0 0 20px 1px black;
+    font-size: 18px;
+    display: none;
+}
+
+#left_fix{
+    width: 45%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    background-color: gainsboro;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#left_fix img{
+    height: 425px;
+    width: 100%;
+    object-fit: contain;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#right_fix{
+    width: 55%;
+    height: 100%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: #DC143C
+}
+
+#right_fix form{
+    width: 100%;
+    height: 100%;
+}
+
+.right_fix_mini{
+    padding-top: 5%;
+    padding-left: 5%;
+    height: 12%;
+    width: 95%;
+    font-size: 25px;
+}
+
+#r_f6{
+    height: 18.5%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+#right_fix form input[type="text"]{
+    font-size: 20px;
+    font-family: 'Itim';
+    border-image: linear-gradient(to right, orange, orangered) 1;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+::placeholder{
+    font-style: italic;
+}
+
+#idnamesp{
+    width: 290px;
+}
+
+#idcate{
+    width: 140px;
+    font-family: 'Itim';
+    font-style: italic;
+    font-size: 20px;
+    border-image: linear-gradient(to right, orange, orangered) 1;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid;
+}
+#idauthor{
+    width: 220px;
+}
+#idprice{
+    width: 170px;
+}
+#idsp{
+    width: 100px;
+}
+
+#idsc{
+    width: 100px;
+}
+
+#file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+}
+
+#r_f6 label {
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    width: 110px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#r_f6 label:hover{
+    color: gold
+}
+
+#showimage{
+    position: absolute;
+    bottom: 0;
+    left: 111px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Itim'
+}
+
+#showimage:hover{
+    background: lightgray
+}
+
+#fixing{
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#fixing:hover{
+    background-color: orangered;
+    color: white;
+}
+
+@keyframes ani2 {
+    0% {top: -90px;}
+    100% {top: 70px;}
+}
+
+
+.select{
+    border: none;
+    text-align: center;
+    font-family: 'Itim';
+    color:  orangered;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+/*MAY CAI NUT NHAN*/
+input[type="date"]{
+    font-family: 'Itim';
+    margin: 5px;
+    text-align: center
+}
+
+#r2_yeucau button{
+    color: white;
+    font-family: 'Itim';
+    border-radius: 5px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+#r2_yeucau button:hover{
+    background-image: linear-gradient(to right, orange, orangered);
+}
+
+table input{
+    color: white;
+    cursor: pointer;
+    font-family: 'Itim';
+    margin-bottom: 5px;
+    margin-top: 5px
+}
+
+.del{
+    background-image: linear-gradient(to right, orange, #DC143C);
+}
+
+.fix{
+    background-image: linear-gradient(to right, purple, blue);
+}
+
+.fix:hover{
+    background-image: linear-gradient(to right, royalblue, royalblue);
+}
+
+.del:hover{
+    background-image: linear-gradient(to right, orange, orangered);
+}
+
+.acp:hover{
+    background-image: linear-gradient(to right, orange, orangered);
+}
+
+.cancle:hover{
+    background-image: linear-gradient(to right, orange, orangered);
+}
+
+.clo{
+    position: absolute;
+    top:-3px;
+    right: 0px;
+    height: 25px;
+    width: 25px;
+    background-color:transparent;
+    border: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Itim';
+    font-size: 18px
+}
+
+.clo:hover{
+    color: red;
+}
+
+/*DANG KY*/
+#form2{
+    height: 273px;
+    width: 468px;
+    margin: 150px auto;
+    border-radius: 15px;
+    position: relative;
+    z-index: 15;
+    animation-name: ani2;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    background-color:rgba(255,255,255,0.89);
+    box-shadow: 0 0 20px 1px black;
+    display: none;
+    line-height: 1.1;
+    font-size: 18px
+}
+
+#form2 input[type="text"], #form2 input[type="password"]{
+    border-bottom: solid 2px #DC143C;
+    background-color: transparent;
+    border-radius: 5px;
+    height: 26px;
+    width: 180px;
+    margin-left: 7px;
+    font-family: 'Itim';
+    font-size: 17px;
+    margin-top: 2px
+}
+
+#form2 label{
+    background: linear-gradient(to right, orangered, #DC143C );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+
+::placeholder { 
+    color: dimgray ; 
+    font-style: italic
+}
+
+ #left2{
+     float: left;
+     background-color: transparent;
+     padding-top: 17px;
+     padding-left: 20px;
+     height:256px;
+     width: 214px;
+     border-top-left-radius: 15px;
+     border-bottom-left-radius: 15px;
+ }
+ 
+  #right2{
+     padding-top: 17px;
+     padding-left: 20px;
+     float: left;
+     height: 256px;
+     width: 214px;
+     border-top-right-radius: 15px;
+     border-bottom-right-radius: 15px;
+}
+
+input[type="submit"]{
+    width: 100px;
+    height: 30px;
+    border-radius: 35px;
+    margin-top: 7px;
+    margin-left: 40px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Itim';
+    background: linear-gradient(to right, orangered, #DC143C );
+}
+
+input[type="reset"]{
+    position: absolute;
+    top:5px;
+    right: 5px;
+    height: 25px;
+    width: 25px;
+    background-color:transparent;
+    border: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Itim'
+}
+
+input[type="reset"]:hover{
+    color: red
+}
