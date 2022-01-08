@@ -2,11 +2,7 @@ function main(){
     window.location="index.html";
 }
 /*BIEN TOAN CUC*/
-var urlTemp = "../../BaiTap/public_html/img";
-var numberOfDelProduct=-1;
-var numberOfFixProduct=-1;
 var numberOfCartProduct=-1;
-let locTemp=[];
 let finding=[];
 let TimKiemSanPham=[];
 
