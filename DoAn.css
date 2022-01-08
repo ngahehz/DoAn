@@ -1,196 +1,400 @@
 body{
     width: 100%;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    font-family: 'Itim'
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#header{
+    background: -webkit-linear-gradient(lightgoldenrodyellow, pink); 
+    background: -o-linear-gradient(lightgoldenrodyellow, pink); 
+    background: -moz-linear-gradient(lightgoldenrodyellow, pink);
+    background:  linear-gradient( lightgoldenrodyellow, pink );
+    font-size: 60px;
+    padding-top: 10px;
+    padding-left: 160px; 
+    height: 90px;
+    width: 100%;
+}
+
+#header img{
+    height: 124px;
+    width: 130px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+    z-index: 6;
+}
+
+#ikon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    width: 40%;
+    display: flex;
+}
+
+#ikon a{
+    text-decoration: none;
+    color: black;
+}
+
+#ikon > div{
+    margin: auto;
+    font-size: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+#ikon1{
+    display:none;
+}
+
+#ikon_his{
+    color: white;
+    height: 20px;
+    width: 70px;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    left: -10px;
+    font-family: 'Itim';
+    background-color: black;
+    z-index: 20;
+    font-weight: 100;
+    border-radius: 5px;
+    display: none
+}
+
+#ikon_his:hover{
+    color: yellow
+}
+
+#ikon_user{
+    color: black;
+    height: 20px;
+    width: 80px;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    left: -20px;
     font-family: 'Itim';
     overflow-x: hidden;
 }
 
-#container {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0
+#ikon_user:hover{
+    color:blue;
 }
 
-#left {
-    width: 18%;
-    height: 100%;
-    background:  linear-gradient( to right, #DC143C, lightsalmon);
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
-    float: left;
-    position: fixed;
-    text-align: center;
-}
-
-#control{
-    padding-right: 20px
-}
-
-a{
-    text-decoration: none;
+#ikon_logout{
     color: white;
-    font-size: 20px;
+    height: 20px;
+    width: 70px;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    top: 55px;
+    left: -15px;
+    font-family: 'Itim';
+    background-color: black;
+    z-index: 20;
+    font-weight: 100;
+    border-radius: 5px;
+    display: none
 }
 
-.subcontrol a:hover{
+#ikon_logout:hover{
     color: yellow
 }
 
-.fa-splotch{
-    color: transparent;
-    margin-right: 5px;
-}
-
-h1{
-  background: linear-gradient(to right, yellow, white );
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color:transparent;
-}
-
-#left span{
-    position: absolute;
-    bottom: 0;
-    padding-bottom: 10px;
-    font-size: 18px
-}
-
-#left span:hover{
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: bold
-}
-
-#right{
-    width: 82%;
-    float: right;
-}
-
-#r1{
-    width: 100%;
-    height: 180px;
-    font-size: 50px;
-    justify-content: center; 
-    display: flex; 
-    align-items: center;
-    font-weight: bold;
-    background: linear-gradient(to right, orange, #DC143C );
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color:transparent;
-}
-
-#r2{
-    width: 100%;
-    text-align: center
-}
-
-#r2_yeucau{
-    font-size: 27px;
-    display: flex;
-    align-items: center; 
-    justify-content: center
-}
-
-#r2yc{
-    font-size: 27px;
-    margin: 10px
-}
-
-#r2yc input{
-    border:none;
-    border-bottom: solid 2px red;
-    font-family: 'Itim';
-    font-size: 20px
-}
-
-#r2_table{
-    width: 100%;
-}
-
-#r2mini{
-    width: 100%;
-    position: relative;
-    height: 50%;
-    color: gray;
-    justify-content: center; 
-    display: flex; 
-    align-items: center;
-}
-
-#r2mini span{
-    position: absolute;
+nav{
+    background-color:#DC143C;
+    position: sticky;
+    position: -webkit-sticky;
     top: 0;
     left: 0;
-    font-size: 30px;
-}
-
-#r2mini div{
-    border: solid 3px red;
-    width: 90%;
-    height: 70%;
-    text-align: center;
-    color: black;
-    font-size: 150px;
-}
-
-
-table{
-    border-collapse: collapse;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 10px;
-}
-
-th {
-    color:  orangered;
-    font-weight: 500;
-    background: lightcyan
-}
-
-th, td {
-    border: 2px solid black;
-}
-
-tr:hover{
-    background-color:#ddd;
-}
-
-#tongcong{
-    background: skyblue;
+    padding-bottom: 5px;
+    width: 100%;
+    z-index: 5;
     height: 30px;
-    font-weight: 600
 }
 
-table img{
-    width: 70px;
-    height: 70px;
+.menumini{
+     display: flex;
+     justify-content: space-around;
+     margin: auto;
+ }
+ 
+.menumini li{
+    list-style: none;
+    padding-top: 5px;
+    background-color: #DC143C;
+    height: 30px;
+    width: 12%;
+    text-align: center;
+    position: relative
+ }
+ 
+.menumini > li:hover{
+     background-color: coral;
+     transition: ease-in 0.1s;
+ }
+ 
+ #timkiem{
+     position: relative;
+     color: black;
+     display: flex;
+     width: 20%;
+ } 
+ 
+ select{
+     width: 50px;
+     height: 25px;
+     border-radius: 5px;
+     font-family: 'Itim';
+     text-align: center
+ }
+ 
+ #timkiem i{
+     position: absolute;
+     top: 10px;
+     left: 172px;
+     cursor: pointer;
+ }
+ 
+ #timkiem input{
+     height: 25px;
+     margin-left: 5px;
+     margin-right: 5px;
+     width: 140px;
+     border-radius: 5px;
+     font-family: "Itim"
+ }
+ 
+.menumini > li > a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+ }
+ 
+ .menumini > li:hover .submenu{
+     display: block;
+     transition: ease-in 0.2s;
+ }
+ 
+ .submenu{
+     min-width: 250px;
+     position: absolute;
+     top: 30px;
+     left: -50px;
+     display: none;
+ }
+
+.submenu li{
+     width: 100%;
+     border: none;
+     border-bottom: 1px solid #ccc;
+     text-align: left;
+     padding-left: 10px;
+     background:  linear-gradient(to right, lightgoldenrodyellow, pink );
+ } 
+ 
+ .submenu li:hover{
+         background: white
+     }
+ 
+.submenu i,.submenu a{
+    margin-right: 10px;
+    color: black;
+    text-decoration: none;
+ } 
+ 
+ .submenu a:hover{
+     color: #DC143C;
+ }
+
+#slideshow{
+    height: 440px;
+    width: 100%;
 }
 
-table form{
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
-    margin: auto
+#img11,#img22,#img33,#img44{
+    object-fit: cover;
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    -webkit-box-reflect:below 1px  linear-gradient(transparent 60%, rgba(0,0,0,0.4) );/*khong ho tro tren fire fox*/
 }
 
-#modal{
+#img1,#img2,#img3,#img4{
+    object-fit: cover;
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    right: -100%;
+    animation-name: ani;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    -webkit-box-reflect:below 1px  linear-gradient(transparent 60%, rgba(0,0,0,0.4) );
+}
+
+#img1,#img11{
+    animation-delay: -2s;
+    object-position: 0px 23%;
+}
+
+#img2,#img22{
+    animation-delay: 3s;
+    object-position: 0px 12%;
+}
+
+#img3,#img33{
+    animation-delay: 8s;
+    object-position: 0px 29%;
+}
+
+#img4,#img44{
+    animation-delay: 13s;
+    object-position: 0px 30%;
+}
+
+@keyframes ani {
+    0{ right: -100%;}
+    10% { right: 0px;}
+    25% { right:0px;}
+    35%{ right:100%;}
+    100%{ right:200%;}
+}
+
+#content{
+    width: 100%;
+}
+
+#bs{
+    text-align: center;
+    font-family: 'Itim';
+    font-size: 50px;
+    text-transform: uppercase;
+    padding-top: 15px;
+}
+
+.sanpham{
+    width: 100%;
+    padding-bottom: 20px;
+    background: #FFFFE0;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.sp{
+    height: 300px;
+    width: 19%;
+    background: #DC143C;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 30px;
+    font-family: serif;
+    font-size: 16px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    box-shadow: 0 0 20px 5px black;
+    transition: 0.3s ease-in
+}
+
+.sp img{
+    height:240px;
+    width: 100%;
+    object-fit: contain;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.sp:hover{
+    transform: translateY(-10px) 
+}
+
+.infobs{
+    border-top: solid 3px orangered;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.infobs:hover{
+    color: #DC143C;
+    cursor: pointer;
+}
+
+#littlepp{
+    height: 310px;
+    background:linear-gradient( #FFFFE0, pink );
+    display: flex;
+    padding-top: 70px;
+    justify-content: center;
+    border-top: 3px solid #939393
+}
+
+.litleppmn{
+    margin-left: 45px;
+    margin-right: 45px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
+}
+
+.img{
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px 5px black;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+    cursor: pointer
+}
+
+.img:hover{
+    transform: translateY(-10px)
+}
+
+#modal1{
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 15;
+    z-index: 10;
     display: none;
 }
 
-#overlay{
+#modal2{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    display: none;
+}
+
+#overlay1{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -198,292 +402,122 @@ table form{
     z-index: 10;
 }
 
-#warning,#warning1{
-    height: 100px;
-    width: 200px;
-    margin: 200px auto;
+#overlay2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 35;
+}
+
+#form1{
+    height: 273px;
+    width: 468px;
+    margin: 160px auto;
     border-radius: 15px;
     position: relative;
     z-index: 15;
     animation-name: ani2;
     animation-duration: 1s;
     -webkit-animation-fill-mode: forwards;
-    background-color:white;
+    background-image: linear-gradient(to right, yellow, #DC143C);
     box-shadow: 0 0 20px 1px black;
-    display: none; 
-    flex-direction: column-reverse;
-    align-items: center;
-    font-size: 18px;
-}
-
-.acp,.cancle{
-    width: 70px;
-    margin-top: 10px;
-    color: white;
-    cursor: pointer;
-    font-family: 'Itim';
-    background-image: linear-gradient(to right, orange, #DC143C);
-    border-radius: 6px; 
-    text-transform: uppercase;
-}
-
-#fixProduct{
-    height: 425px;
-    width: 60%;
-    margin: 30px 29%;
-    border-radius: 15px;
-    position: relative;
-    z-index: 15;
-    animation-name: ani2;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: forwards;
-    background-color:white;
-    box-shadow: 0 0 20px 1px black;
-    font-size: 18px;
     display: none;
 }
 
-#left_fix{
-    width: 45%;
-    height: 100%;
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; 
-    background-color: gainsboro;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+ #form1 b{
+     margin-left: 21px;
+ }
+
+ #left1{
+     float: left;
+     background-color: white;
+     padding-top: 20px;
+     height:253px;
+     width: 234px;
+     border-top-left-radius: 15px;
+     border-bottom-left-radius: 15px;
+     display: flow;
+ }
+ 
+ #left1 div{
+     font-size: 45px;
+     padding-bottom: 20px;
+     text-align: center
+ }
+ 
+ #left1 input[type="text"], #left1 input[type="password"]{
+     margin-left: 14px;
+     border-color: #DC143C;
+     border-radius: 10px;
+     height: 25px;
+     width: 200px;
+     background-color: whitesmoke;
+     font-family: 'Itim'
+ }
+ 
+ #left1 input[type="button"]{
+     width: 100px;
+     height: 30px;
+     border-radius: 35px;
+     margin-top: 10px;
+     margin-left: 67px;
+     background-image: linear-gradient(to right, orange, #DC143C);
+     color: white;
+     cursor: pointer;
+     font-family: 'Itim'
+ }
+ 
+ #right1{
+     padding-top: 10px;
+     float: left;
+     background-color: transparent;
+     height: 228px;
+     width: 234px;
+     border-top-right-radius: 15px;
+     border-bottom-right-radius: 15px;
+     color: white;
 }
 
-#left_fix img{
-    height: 425px;
-    width: 100%;
-    object-fit: contain;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-#right_fix{
-    width: 55%;
-    height: 100%;
-    float: right;
-    display: flex;
-    flex-direction: column;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    color: #DC143C
-}
-
-#right_fix form{
-    width: 100%;
-    height: 100%;
-}
-
-.right_fix_mini{
-    padding-top: 5%;
-    padding-left: 5%;
-    height: 12%;
-    width: 95%;
-    font-size: 25px;
-}
-
-#r_f6{
-    height: 18.5%;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-}
-
-#right_fix form input[type="text"]{
-    font-size: 20px;
-    font-family: 'Itim';
-    border-image: linear-gradient(to right, orange, orangered) 1;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-}
-
-::placeholder{
-    font-style: italic;
-}
-
-#idnamesp{
-    width: 290px;
-}
-
-#idcate{
-    width: 140px;
-    font-family: 'Itim';
-    font-style: italic;
-    font-size: 20px;
-    border-image: linear-gradient(to right, orange, orangered) 1;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 2px solid;
-}
-#idauthor{
-    width: 220px;
-}
-#idprice{
-    width: 170px;
-}
-#idsp{
-    width: 100px;
-}
-
-#idsc{
-    width: 100px;
-}
-
-#file {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-}
-
-#r_f6 label {
-    font-size: 18px;
-    color: white;
-    background-color: black;
-    cursor: pointer;
-    width: 110px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    text-align: center;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-}
-
-#r_f6 label:hover{
-    color: gold
-}
-
-#showimage{
-    position: absolute;
-    bottom: 0;
-    left: 111px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Itim'
-}
-
-#showimage:hover{
-    background: lightgray
-}
-
-#fixing{
-    height: 30px;
-    width: 60px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#fixing:hover{
-    background-color: orangered;
-    color: white;
-}
-
-@keyframes ani2 {
-    0% {top: -90px;}
-    100% {top: 70px;}
-}
-
-
-.select{
-    border: none;
-    text-align: center;
-    font-family: 'Itim';
-    color:  orangered;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-
-/*MAY CAI NUT NHAN*/
-input[type="date"]{
-    font-family: 'Itim';
-    margin: 5px;
-    text-align: center
-}
-
-#r2_yeucau button{
-    color: white;
-    font-family: 'Itim';
-    border-radius: 5px;
-    padding-bottom: 5px;
-    margin-left: 15px;
-    margin-bottom: 4px;
-    cursor: pointer;
-    font-size: 16px;
+#right1 div{
+    margin-left: 5px;
+    margin-right: 5px;
     text-align: center;
 }
 
-#r2_yeucau button:hover{
-    background-image: linear-gradient(to right, orange, orangered);
-}
+ #right1 input{
+     width: 100px;
+     height: 30px;
+     border-radius: 35px;
+     margin-top: 30px;
+     margin-left: 67px;
+     background-color: white;
+     color: black;
+     cursor: pointer;
+     font-family: 'Itim'
+ }
 
-table input{
-    color: white;
-    cursor: pointer;
-    font-family: 'Itim';
-    margin-bottom: 5px;
-    margin-top: 5px
-}
-
-.del{
-    background-image: linear-gradient(to right, orange, #DC143C);
-}
-
-.fix{
-    background-image: linear-gradient(to right, purple, blue);
-}
-
-.fix:hover{
-    background-image: linear-gradient(to right, royalblue, royalblue);
-}
-
-.del:hover{
-    background-image: linear-gradient(to right, orange, orangered);
-}
-
-.acp:hover{
-    background-image: linear-gradient(to right, orange, orangered);
-}
-
-.cancle:hover{
-    background-image: linear-gradient(to right, orange, orangered);
-}
-
-.clo{
+input[type="reset"]{
     position: absolute;
-    top:-3px;
-    right: 0px;
+    top:5px;
+    right: 5px;
     height: 25px;
     width: 25px;
     background-color:transparent;
     border: transparent;
     text-align: center;
     cursor: pointer;
-    font-family: 'Itim';
-    font-size: 18px
+    font-family: 'Itim'
 }
 
-.clo:hover{
-    color: red;
+input[type="reset"]:hover{
+    color: lime
 }
 
-/*DANG KY*/
 #form2{
     height: 273px;
     width: 468px;
-    margin: 150px auto;
+    margin: 160px auto;
     border-radius: 15px;
     position: relative;
     z-index: 15;
@@ -555,19 +589,547 @@ input[type="submit"]{
     background: linear-gradient(to right, orangered, #DC143C );
 }
 
-input[type="reset"]{
+@keyframes ani2 {
+    0% {top: -70px;}
+    100% {top: 40px;}
+}
+
+/*div sp*/
+#info{
+    height: 425px;
+    width: 760px;
+    margin: 60px auto;
+    border-radius: 15px;
+    position: relative;
+    z-index: 15;
+    animation-name: ani2;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    background: bisque;
+    box-shadow: 0 0 20px 5px black;
+    display: none;
+}
+
+#left_info{
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+#info img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#right_info{
+    height: 100%;
+    width: 55%;
+    float: right;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#r1_info{
+    height: 35%;
+    font-size: 50px;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#r2_info{
+    height: 40%;
+    background: yellow;
+    font-size: 30px;
+    display: flex;
+    align-items: center; 
+}
+
+#r3_info{
+    height: 25%;
+    width: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#r3_info button{
+    width: 41%;
+    height: 35%;
+    background-image: linear-gradient(to right, orangered, #DC143C);
+    color: white;
+    cursor: pointer;
+    font-family: 'Itim';
+    border-radius: 35px;
+    font-size: 19px;
+    margin-bottom: 9px
+}
+
+#r3_info button:hover{
+    background-image: linear-gradient(to right, orange, orangered);
+    color: gainsboro
+}
+
+#right_info > button{
+    background-color: transparent;
+    border: none;
+    font-family: 'Itim';
+    font-size: 20px;
     position: absolute;
-    top:5px;
-    right: 5px;
+    top: 2px;
+    right: 6px;
+}
+
+#right_info > button:hover{
+    color: red;
+    cursor: pointer;
+}
+
+#soTrang {
+    justify-content: center;
+    display: flex;
+}
+
+#soTrang a{
+    text-decoration:none;
+    color: black
+}
+
+.number{
+    border: solid medium #ff253a;
+    height: 20px;
+    width: 22px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    margin-left: 5px
+}
+
+#warningindex,#warningindex2,#warningindex3,#warningindex4{
+    height: 100px;
+    width: 200px;
+    margin: 200px auto;
+    border-radius: 15px;
+    position: relative;
+    z-index: 40;
+    animation-name: ani2;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    background-color:white;
+    box-shadow: 0 0 20px 1px black;
+    display: none; 
+    text-align: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 18px;
+}
+
+@keyframes ani3 {
+    0% {top: 240px;}
+    100% {top: 300px;}
+}
+
+.acp{
+    width: 70px;
+    margin-top: 5px;
+    margin-bottom: -5px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Itim';
+    background-image: linear-gradient(to right, orange, #DC143C);
+    border-radius: 6px; 
+    text-transform: uppercase;
+}
+
+.acp:hover{
+    background-image: linear-gradient(to right, orange, orangered);
+}
+
+.clo{
+    position: absolute;
+    top:-3px;
+    right: 0px;
     height: 25px;
     width: 25px;
     background-color:transparent;
     border: transparent;
     text-align: center;
     cursor: pointer;
-    font-family: 'Itim'
+    font-family: 'Itim';
+    font-size: 18px
 }
 
-input[type="reset"]:hover{
-    color: red
+.clo:hover{
+    color: red;
+}
+
+#cart,#cartls{
+    height: 425px;
+    width: 760px;
+    margin: 60px auto;
+    border-radius: 15px;
+    position: relative;
+    z-index: 15;
+    animation-name: ani2;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    background-color:rgba(255,255,255,0.89);
+    box-shadow: 0 0 20px 5px black;
+    display: none;
+}
+
+#cartls > button{
+    background-color: transparent;
+    border: none;
+    font-family: 'Itim';
+    font-size: 20px;
+    position: absolute;
+    top: 2px;
+    right: 6px;
+}
+
+#cartls > button:hover{
+    color: aqua;
+    cursor: pointer;
+}
+
+#cart > button{
+    background-color: transparent;
+    border: none;
+    font-family: 'Itim';
+    font-size: 20px;
+    position: absolute;
+    top: 2px;
+    right: 6px;
+}
+
+#cart > button:hover{
+    color: aqua;
+    cursor: pointer;
+}
+
+#cart_top{
+    height: 20%;
+    background: linear-gradient(to right, #DC143C, orange);
+    color: white;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    padding-left: 20px;
+}
+
+#cart_mid{
+    height: 65%;
+}
+
+#cart_mid form{
+    height: 100%;
+}
+
+.info1{
+    width: 10%;
+}
+
+.info2{
+    width: 15%;
+}
+
+.info3{
+    width: 33%;
+}
+
+.info4{
+    width: 12%;
+}
+
+.info5{
+    width: 20%
+}
+
+.info6{
+    width: 10%;
+}
+
+.title_info {
+    height: 30px;
+    background: pink;
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+    text-align: center
+}
+
+#big_info,#big_infols{
+    height: 246.25px;
+    overflow-y: scroll
+}
+
+.mini_info {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    text-align: center;
+    height: 100px
+}
+
+.mini_info div{
+    margin: auto
+}
+
+.mini_info .info4 input{
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center
+}
+
+.mini_info .info2 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%    
+}
+
+.mini_info .info6 input{
+    background-image: linear-gradient(to right, orange, #DC143C);
+    color: white;
+    cursor: pointer;
+    font-family: 'Itim';
+    margin-bottom: 5px;
+    margin-top: 5px
+}
+
+.mini_info .info6 input:hover{
+    background-image: linear-gradient(to right, orange, orangered);
+}
+
+#cart_bot{
+    height : 15%;
+    background: white;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 40px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center; 
+    
+}
+
+#cart_bot div{
+    width: 400px;
+}
+
+#cart_bot button{
+    margin-left: 70px;
+    height: 40px;
+    width: 140px;
+    font-size: 20px;
+    background-image: linear-gradient(to right, purple, blue);
+    color: white;
+    font-family: 'Itim';
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+#cart_bot button:hover{
+    background-image: linear-gradient(to right, red, crimson);
+}
+
+
+/*FOOTER*/
+    .grid{
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 50px;
+    }
+    .grid_row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    
+    .grid_column-2-4{
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 20%;
+    }  
+    
+    .footer{
+        padding-top: 16px;
+        border-top: 4px solid darkgray;
+        background: white;
+    }
+    .footer_heading{
+        font-size: 16px;
+        text-transform: uppercase;
+        color: var(--text-color);
+    }
+    .footer-list{
+        padding-left: 0;
+        list-style: none;
+    }
+    .footer-item_link{
+        text-decoration: none;
+        font-size: 20px;
+        color: #666;
+        padding: 2px 0;
+        display: flex;
+        align-items: center;
+    }
+    .footer-item_link:hover{
+        color: #DC143C
+    }
+    .footer-item_icon{
+        font-size: 20px;
+        margin-right: 5px;
+    }
+    .footer_download{
+        display: flex;
+    }
+    .footer_download-png{
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        border: 1px solid white;
+    }
+    .footer_bottom{
+        padding: 8px 0;
+        background: #ccc;
+    }
+    .footer_text{
+        margin: 0;
+    }
+
+    .pagination-item_link{
+        height: 30px;
+        display: block;
+        font-weight: 300;
+        text-decoration: none;
+        font-size: 20px;
+        color: #939393;
+        min-width: 40px;
+        text-align: center;
+        border-radius: 2px;
+    }
+    
+    #toggle{
+    display: none;
+    background:#DC143C;
+    color: #fff;
+    text-align: right;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px)
+{
+    #header span{
+        display: none
+    }
+    nav{
+        display: none;
+    }
+    .menumini{
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        width:100% ;
+    }
+    .menumini li{
+        padding-top: 10px;
+        list-style: none;
+        background-color: #DC143C;
+        height: 30px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+     }
+     
+    .submenu{
+        position: relative;
+        z-index: 5;
+        width: 30%;
+        top: 0;
+        left: 30%
+    }
+    
+    #toggle{
+        display: block;
+    }
+    
+    .submenu li{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background:  linear-gradient( lightgoldenrodyellow, pink );
+        text-align: left;
+    }
+    
+    .submenu i,.submenu a{
+        color: black;
+        text-decoration: none;
+     } 
+     
+     .submenu li:hover{
+         background: white
+     }
+     
+     .submenu a:hover{
+         color:#DC143C ;
+     }
+     #ikon{
+         position: absolute;
+         top: 0;
+         right: 0;
+         height: 100px;
+         width: 60%;
+         display: flex;
+     }
+
+ select{
+     width: 50px;
+     height: 25px;
+     border-radius: 5px;
+     font-family: 'Itim';
+     text-align: center
+ }
+ 
+ #timkiem i{
+     position: absolute;
+     top: 14px;
+     left: 57%;
+     cursor: pointer;
+ }
+ 
+ #timkiem input{
+     height: 25px;
+     margin-left: 5px;
+     margin-right: 5px;
+     width: 140px;
+     border-radius: 5px;
+     font-family: "Itim"
+ }
+     #bs{
+        font-size: 40px;
+    }
+    #sanpham{
+        width: 200%;
+    }
+     #timkiem{
+     position: relative;
+     color: black;
+     display: flex;
+     width: 100%;
+     justify-content: center
+ } 
+
 }
