@@ -1,0 +1,557 @@
+<html>
+    <head>
+        <title>MagicBook</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href='./DeAn.css'>
+        <script type="text/javascript" src="./DeAn.js"></script>
+        <link href="../../BaiTap/public_html/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    </head>
+    
+    <body bgcolor="#FFFFE0">
+        <div id="container">
+            
+            <div id="header">
+                <img src="./img/logo.png" alt="Lỗi hình òi" onclick="main()"/>
+                <span>MiniBook</span>
+                <div id='ikon'>
+                    <div><a href="https://www.facebook.com/maitotoxin/" target="_blank"><i class="fab fa-facebook"></i></a></div>
+                    <div><a href="https://www.youtube.com/c/Sontungmtp" target="_blank"><i class="fab fa-youtube"></i></a></div>
+                    <div id="ikon1">
+                        <i class="fa fa-user">
+                            <div id="ikon_user" onMouseOver="document.getElementById('ikon_logout').style.display='block';" onMouseOut="document.getElementById('ikon_logout').style.display='none'"></div>
+                            <div id="ikon_logout" onMouseOver="document.getElementById('ikon_logout').style.display='block';" onMouseOut="document.getElementById('ikon_logout').style.display='none'" onclick="clickLogout()">logout</div>
+                        </i>
+                    </div>
+                    <div id="ikon2"><i class="fa fa-user" onclick="signIn()"></i></div>
+                    <div id="ikon3" onMouseOver="lsgiohang()" onMouseOut="document.getElementById('ikon_his').style.display='none'">
+                        <i class="fas fa-shopping-cart" onclick="xemGioHang()"></i>
+                        <div id="ikon_his" onclick="xemLichSu()">Lịch sử</div>
+                    </div>
+                </div>
+            </div>
+    
+            <nav>
+                
+                <ul class="menumini">
+                    <li><a href="index.html"><i class="fa fa-home" ></i> Trang Chủ</a></li>
+                    <li><a href="#littlepp"><i class="fab fa-hotjar"></i> Về Chúng Tôi</a></li>
+                    <li><a href=""><i class="fas fa-book"></i> Thể loại</a>
+                        <ul class="submenu">
+                            <li><a href="index.html?a1"><i class="fab fa-envira"></i>Thiếu Nhi</a></li>
+                            <li><a href="index.html?b1"><i class="fab fa-envira"></i>Trinh Thám</a></li>
+                            <li><a href="index.html?c1"><i class="fab fa-envira"></i>Tình Cảm</a></li>
+                            <li><a href="index.html?d1"><i class="fab fa-envira"></i>Truyện Tranh</a></li>
+                        </ul>
+                    </li>
+                    <li id="timkiem">
+                        <i class="fas fa-search" onclick="timkiemsanpham()"></i> 
+                        <select id="keycate" >
+                            <option value="">All</option>
+                            <option value="a">Thiếu Nhi</option>
+                            <option value="b"> Trinh Thám </option>
+                            <option value="c"> Tình Cảm </option>
+                            <option value="d"> Truyện Tranh </option>
+                        </select>
+                        <input id ="tukhoa" type="text"/>
+                        <select id="keyprice" >
+                            <option value="">All</option>
+                            <option value="a"> < 50,000</option>
+                            <option value="b">50,000-100,000 </option>
+                            <option value="c"> 100,000-200,000 </option>
+                            <option value="d"> > 200,000 </option>
+                        </select>
+                    </li>
+                </ul>
+                
+            </nav>
+            
+            <div id="slideshow">
+                <img id="img1" src="https://b-f4-zpcloud.zdn.vn/7697154842809176494/9e6b31536ad0a18ef8c1.jpg" alt="Lỗi hình òi" />
+                <img id="img2" src="https://b.f7.photo.talk.zdn.vn/1651298723928187096/188379f8257bee25b76a.jpg" alt="Lỗi hình òi" />
+                <img id="img3" src="https://f14.photo.talk.zdn.vn/6830142803729521321/ec1847ad6d2ea670ff3f.jpg" alt="Lỗi hình òi" />
+                <img id="img4" src="../../BaiTap/public_html/img/d.jpg" alt="Lỗi hình òi" />
+            </div>
+                <script>
+                    Banner();
+                </script>
+            
+            <div id="content">
+                <div id="bs">
+                    Sản phẩm bán chạy
+                    <div class="sanpham">
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                        <div class="sp"></div>
+                        <script>
+                            HienThiBestSelling();
+                        </script>
+                    </div>
+                </div>
+                
+                <div id="littlepp">
+                    <div class="litleppmn">
+                        <img class="img" src="https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg"/>
+                        Thanh Nga
+                    </div>
+                    
+                    <div class="litleppmn">
+                        <img class="img" src="https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-9/79312599_1113842715453004_1015388727574265856_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=19026a&_nc_ohc=-OmtMEueLSkAX_4qnK3&_nc_ht=scontent.fsgn13-2.fna&oh=ae361d7578f2d9d556be636347d09457&oe=61D34917" />
+                        Ngô Ngân
+                    </div>
+                    
+                    <div class="litleppmn">
+                        <img class="img" src="https://f4-zpcloud.zdn.vn/247266026749323382/272b54347dc6b698efd7.jpg"/>
+                        Lan Chinh
+                    </div>
+                    
+                    <div class="litleppmn">
+                        <img class="img" src="https://f5.photo.talk.zdn.vn/3212461350723644448/e1398b6ddd9f16c14f8e.jpg"/>
+                        Hùng Nguyễn
+                    </div>
+                </div>
+                
+            </div>
+          
+            <footer class="footer">
+        <div class="grid">
+            
+            <div class="grid_row">
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Chăm sóc khách hàng</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Trung tâm trợ giúp</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Hướng dẫn mua hàng</a>
+                        </li>
+                    </ul>
+                </div>
+                    
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Giới thiệu</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Giới thiệu</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Tuyển dụng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Điều khoản</a>
+                        </li>
+                    </ul>
+                </div>
+                    
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading"> Danh mục</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Tác giả</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Tác phẩm</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Combo</a>
+                        </li>
+                    </ul>
+                </div>
+                    
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Chi tiết</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                Về tác phẩm
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                Về nhân vật
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                Về truyện sắp ra mắt
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                    
+            </div>
+                
+            <div class="grid_row">
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Thể loại</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Văn học nước ngoài</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Truyện tranh</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Tác phẩm</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Giành giải nobel</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Kinh điển</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Bán chạy</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Tác giả</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Việt Nam</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Nước ngoài</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Theo dõi</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                <i class="footer-item_icon fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                <i class="footer-item_icon fab fa-youtube"></i>
+                                Youtube
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                <i class="footer-item_icon fab fa-instagram"></i>
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                
+            <div class="grid_row">
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Thông tin chi tiết</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Địa chỉ</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Trang trực tuyến</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Giới thiệu</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Tuyển dụng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Điều khoản</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Thêm</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Bìa cứng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Bìa mềm</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Bản đặc biệt</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid_column-2-4">
+                    <h2 class="footer_heading">Chi nhánh</h2>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                Chi nhánh Đà Nẵng
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                Chi nhánh Hà Nội
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                Chi nhánh TPHCM
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+            <div class="footer_bottom">
+                <div class="grid_row">
+                    <div class="grid">
+                        <p class="footer_text">@2021 - Bản quyền thuộc công ty VTNHH</p>
+                    </div>
+                </div>
+            </div>
+        
+    </footer>
+            
+            <div id='modal1'>
+                <div id='overlay1'>
+                </div>
+                    
+                <div id='form1'>
+                    <form>
+                        <input type="reset" value="X" onclick="closedFrom1()" />
+                            
+                        <div id="left1">
+                                
+                            <div>
+                                Sign In
+                            </div>
+                                
+                            <b>Username</b><br/>
+                            <input type="text" id="idnameid1" name="txtname1" value=""/></br></br>
+                       
+                            <b>Password</b><br />
+                            <input type="password" id="idpass1" name="txtpass1" value=""/></br></br>
+                             
+                            <input type="button" value="START" onclick="checkSignIn()"/>
+                        </div>
+                    </form>
+                            
+                           
+                    <div id="right1">
+                        <form>
+                            <div>
+                                <h1>If you don't have an account </h1>
+                                Enter your personal details and start journey with us &hearts;
+                            </div>
+                            <input type="button" value="SIGN UP" onclick="signUp()"/>
+                        </form>
+                    </div>
+                </div>
+           
+                <div id='form2'>
+                    <form onsubmit="return(checkSignUp())" method="post">
+                               
+                        <div id="left2">
+                            <input type="reset" value="X" onclick="closedFrom2()" />
+                                    
+                            <label for="idname">Họ và Tên</label><br/>
+                            <input type="text" id="idname" name="txtname" value="" placeholder="your name"/></br></br>
+
+                            <label for="iddiachi">Địa Chỉ</label><br />
+                            <input type="text" id="iddiachi" name="txtdiachi" value="" placeholder="address"/></br></br>
+                        
+                            <label for="idsdt">Số Điện Thoại</label><br />  
+                            <input type="text" id="idsdt" name="txtsdt" maxlength="10" value="" placeholder="phone number"/></br></br>
+                        
+                            <label for="gender">Giới Tính</label></br>
+                        
+                            <input type="radio"  id="idnam" name="gender" value="1" />
+                            <label for="idnam">Nam &nbsp; &nbsp; </label>
+                        
+                            <input type="radio"  id="idnu" name="gender" value="2" />
+                            <label for="idnu">Nữ &nbsp; &nbsp; </label>
+                                    
+                            <input type="radio"  id="idkhac" name="gender" value="3" />
+                            <label for="idkhac">Khác</label>
+                        </div>
+                               
+                        <div id="right2">
+                            <label for="idnameid">Tên Đăng Nhập</label><br />
+                            <input type="text" id="idnameid" name="txtnameid" value="" placeholder="username"/></br></br>
+                                 
+                            <label for="idpass">Mật Khẩu</label><br />
+                            <input type="password" id="idpass" name="txtpass" value="" placeholder="password"/></br></br>
+                        
+                            <label for="idrepass">Nhập lại Mật Khẩu</label><br />  
+                            <input type="password" id="idrepass" name="txtrepass" value="" placeholder="password again"/></br></br>
+                     
+                            <input type="submit" value="SIGN UP"/>
+                        </div>
+                        
+                    </form>    
+                </div>
+                    
+                <div id="info">
+                    <div id="left_info">
+                        <img src="../../BaiTap/public_html/img/cat.webp" alt="Lỗi hình òi"/>
+                    </div>
+                            
+                    <div id="right_info">
+                        <button type="button" onclick="closedInfoIndex()">X</button>
+                        <div id="r1_info">NAME</div>
+                                
+                        <div id="r2_info">
+                            gia tin <br>
+                            tac gia<br>
+                            theloai
+                        </div>
+                                
+                        <div id="r3_info">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="cart">
+                    <button type="button" onclick="closedGioHang()">X</button>
+                    <div id="cart_top">
+                        Giỏ Hàng
+                    </div>
+                    
+                    <div id="cart_mid">
+                        <form>
+                             <div class="title_info">
+                                 <div class="info1">STT</div>
+                                 <div class="info2">Hình</div>
+                                 <div class="info3">Tên sản phẩm</div>
+                                 <div class="info4">Số lượng </div>
+                                 <div class="info5"> Giá </div>
+                                 <div class="info6"></div>
+                             </div>
+                            
+                            <div id="big_info">
+                                <div class="mini_info">
+                                    <br>
+                                    &nbsp; &nbsp; Chưa chọn mua j hết ;(
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div id="cart_bot">
+                        <div>Tổng tiền: <span id="tongtien"></span></div>
+                        <button type="button" onclick="WarningThanhToan()">Thanh Toán</button>
+                    </div>
+                    
+                </div>
+                
+                <div id="cartls">
+                    <button type="button" onclick="closedGioHang()">X</button>
+                    <div id="cart_top">
+                        Lịch Sử Mua Hàng
+                    </div>
+                    
+                    <div id="cart_mid">
+                        <form>
+                             <div class="title_info">
+                                 <div class="info1">STT</div>
+                                 <div class="info2">Hình</div>
+                                 <div class="info3">Tên sản phẩm</div>
+                                 <div class="info4">Số lượng </div>
+                                 <div class="info5"> Giá </div>
+                                 <div class="info6"></div>
+                             </div>
+                            
+                            <div id="big_infols">
+                                <div class="mini_info">
+                                    <br>
+                                    &nbsp; &nbsp; Chưa mua j cả ;(
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div id="cart_bot">
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div id='modal2'>
+                
+                <div id='overlay2'>
+                </div>
+                
+                <div id="warningindex">
+                    <form>
+                        <input type="button" class='clo' onclick="closedWarningIndex()" value="x"></input>
+                        <input type="button" class='acp'  value="Ok" onclick="AcpPushIntoCart()"></input>
+                    </form>
+                    <div id="warningtext">Đăng nhập rồi mới mua hàng bạn nhé <3</div>
+                </div>
+                
+                <div id="warningindex2">
+                    <form>
+                        <input type="button" class='clo' onclick="closedWarningIndex()" value="x"></input>
+                        <input type="button" class='acp'  value="Ok" onclick="AcpBoSanPham()"></input>
+                        <input type="button" class='acp'  value="cancle" onclick="closedWarningIndex()"></input>
+                    </form>
+                    <div>Bỏ mua sản phẩm này nhé ?</div>
+                </div>
+                
+                <div id="warningindex3">
+                    <form>
+                        <input type="button" class='clo' onclick="closedWarningIndex()" value="x"></input>
+                        <input type="button" class='acp'  value="Ok" onclick="AcpThanhToan()"></input>
+                        <input type="button" class='acp'  value="cancle" onclick="closedWarningIndex()"></input>
+                    </form>
+                    <div>Thanh toán tiền nha !</div>
+                </div>
+                
+                <div id="warningindex4">
+                    <form>
+                        <input type="button" class='clo' onclick="closedWarningIndex()" value="x"></input>
+                        <input type="button" class='acp'  value="Ok" onclick="AcpLogout()"></input>
+                        <input type="button" class='acp'  value="cancle" onclick="closedWarningIndex()"></input>
+                    </form>
+                    <div>Thoát khỏi tài khoản nhé !</div>
+                </div>
+            </div>
+            
+                
+        </div>
+            
+
+        
+    </body>
+     <script>
+        window.onload = function(){
+            createProduct();
+            PageIndex();
+            createAdmin();
+            createActiveId();
+            checkActive();
+            //localStorage.clear();
+            //GiaTienThanhNumber();
+            console.log(localStorage.getItem('activeId'));
+            //console.log(localStorage.getItem('product'));
+            
+        };
+    </script>
+</html>
