@@ -255,22 +255,18 @@ nav{
 
 #img1,#img11{
     animation-delay: -2s;
-    object-position: 0px 23%;
 }
 
 #img2,#img22{
     animation-delay: 3s;
-    object-position: 0px 12%;
 }
 
 #img3,#img33{
     animation-delay: 8s;
-    object-position: 0px 29%;
 }
 
 #img4,#img44{
     animation-delay: 13s;
-    object-position: 0px 30%;
 }
 
 @keyframes ani {
