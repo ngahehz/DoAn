@@ -156,21 +156,24 @@ nav{
      position: relative;
      color: black;
      display: flex;
-     width: 20%;
  } 
  
- select{
-     width: 50px;
+ #timkiem button{
      height: 25px;
      border-radius: 5px;
-     font-family: 'Itim';
-     text-align: center
+     font-family: "Itim";
+     background: white;
+     font-size: 16px;
+ } 
+ 
+ #timkiem button:hover{
+     background: whitesmoke
  }
  
  #timkiem i{
      position: absolute;
      top: 10px;
-     left: 172px;
+     left: 125px;
      cursor: pointer;
  }
  
@@ -425,11 +428,11 @@ nav{
     display: none;
 }
 
- #form1 b{
+#form1 b{
      margin-left: 21px;
  }
 
- #left1{
+#left1{
      float: left;
      background-color: white;
      padding-top: 20px;
@@ -440,13 +443,13 @@ nav{
      display: flow;
  }
  
- #left1 div{
+#left1 div{
      font-size: 45px;
      padding-bottom: 20px;
      text-align: center
  }
  
- #left1 input[type="text"], #left1 input[type="password"]{
+#left1 input[type="text"], #left1 input[type="password"]{
      margin-left: 14px;
      border-color: #DC143C;
      border-radius: 10px;
@@ -456,7 +459,7 @@ nav{
      font-family: 'Itim'
  }
  
- #left1 input[type="button"]{
+#left1 input[type="button"]{
      width: 100px;
      height: 30px;
      border-radius: 35px;
@@ -468,7 +471,7 @@ nav{
      font-family: 'Itim'
  }
  
- #right1{
+#right1{
      padding-top: 10px;
      float: left;
      background-color: transparent;
@@ -485,7 +488,7 @@ nav{
     text-align: center;
 }
 
- #right1 input{
+#right1 input{
      width: 100px;
      height: 30px;
      border-radius: 35px;
@@ -513,6 +516,63 @@ input[type="reset"]{
 input[type="reset"]:hover{
     color: lime
 }
+
+#locSp{
+    height: 260px;
+    width: 468px;
+    margin: 160px auto;
+    border-radius: 15px;
+    position: relative;
+    z-index: 15;
+    animation-name: ani2;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    background-color:rgba(255,255,255,0.89);
+    box-shadow: 0 0 20px 1px black;
+    display: none; 
+    justify-content: space-around; 
+    align-items: center; 
+}
+
+#locSp form{
+    display: flex; 
+    flex-direction: column; 
+    justify-content:space-around; 
+    align-items: center;
+    text-align: center;
+    font-size: 22px;
+    height: 90%;
+}
+
+#locSp input[type="text"]{
+     border-color: #DC143C;
+     border-radius: 10px;
+     height: 25px;
+     width: 100px;
+     background-color: whitesmoke;
+     font-family: 'Itim'
+    
+}
+
+#locSp button{
+    width: 100px;
+    height: 30px;
+    border-radius: 35px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Itim';
+    background: linear-gradient(to right, orangered, #DC143C );
+}
+ 
+ select{
+     font-size: 16px;
+     width: 110px;
+     height: 30px;
+     border-radius: 5px;
+     font-family: 'Itim';
+     text-align: center;
+ }
 
 #form2{
     height: 273px;
@@ -567,7 +627,7 @@ input[type="reset"]:hover{
      border-bottom-left-radius: 15px;
  }
  
-  #right2{
+#right2{
      padding-top: 17px;
      padding-left: 20px;
      float: left;
@@ -577,7 +637,7 @@ input[type="reset"]:hover{
      border-bottom-right-radius: 15px;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     width: 100px;
     height: 30px;
     border-radius: 35px;
@@ -1027,109 +1087,4 @@ input[type="submit"]{
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
-}
-
-@media only screen and (max-width: 768px)
-{
-    #header span{
-        display: none
-    }
-    nav{
-        display: none;
-    }
-    .menumini{
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-        text-align: center;
-        width:100% ;
-    }
-    .menumini li{
-        padding-top: 10px;
-        list-style: none;
-        background-color: #DC143C;
-        height: 30px;
-        width: 100%;
-        text-align: center;
-        position: relative;
-     }
-     
-    .submenu{
-        position: relative;
-        z-index: 5;
-        width: 30%;
-        top: 0;
-        left: 30%
-    }
-    
-    #toggle{
-        display: block;
-    }
-    
-    .submenu li{
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid #ccc;
-        background:  linear-gradient( lightgoldenrodyellow, pink );
-        text-align: left;
-    }
-    
-    .submenu i,.submenu a{
-        color: black;
-        text-decoration: none;
-     } 
-     
-     .submenu li:hover{
-         background: white
-     }
-     
-     .submenu a:hover{
-         color:#DC143C ;
-     }
-     #ikon{
-         position: absolute;
-         top: 0;
-         right: 0;
-         height: 100px;
-         width: 60%;
-         display: flex;
-     }
-
- select{
-     width: 50px;
-     height: 25px;
-     border-radius: 5px;
-     font-family: 'Itim';
-     text-align: center
- }
- 
- #timkiem i{
-     position: absolute;
-     top: 14px;
-     left: 57%;
-     cursor: pointer;
- }
- 
- #timkiem input{
-     height: 25px;
-     margin-left: 5px;
-     margin-right: 5px;
-     width: 140px;
-     border-radius: 5px;
-     font-family: "Itim"
- }
-     #bs{
-        font-size: 40px;
-    }
-    #sanpham{
-        width: 200%;
-    }
-     #timkiem{
-     position: relative;
-     color: black;
-     display: flex;
-     width: 100%;
-     justify-content: center
- } 
-
 }
