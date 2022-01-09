@@ -12,7 +12,7 @@
         <div id="container">
             
             <div id="header">
-                <img src="./img/logo.png" alt="Lỗi hình òi" onclick="main()"/>
+                <img src="./logo.png" alt="error" onclick="main()"/>
                 <span>MiniBook</span>
                 <div id='ikon'>
                     <div><a href="https://www.facebook.com/maitotoxin/" target="_blank"><i class="fab fa-facebook"></i></a></div>
@@ -46,21 +46,8 @@
                     </li>
                     <li id="timkiem">
                         <i class="fas fa-search" onclick="timkiemsanpham()"></i> 
-                        <select id="keycate" >
-                            <option value="">All</option>
-                            <option value="a">Thiếu Nhi</option>
-                            <option value="b"> Trinh Thám </option>
-                            <option value="c"> Tình Cảm </option>
-                            <option value="d"> Truyện Tranh </option>
-                        </select>
                         <input id ="tukhoa" type="text"/>
-                        <select id="keyprice" >
-                            <option value="">All</option>
-                            <option value="a"> < 50,000</option>
-                            <option value="b">50,000-100,000 </option>
-                            <option value="c"> 100,000-200,000 </option>
-                            <option value="d"> > 200,000 </option>
-                        </select>
+                        <button type="button" onclick="clickLocSp()">Lọc</button>
                     </li>
                 </ul>
                 
@@ -490,6 +477,33 @@
                     </div>
                     
                 </div>
+
+                <div id='locSp'>
+                    <form>
+                        <input type="reset" value="X" onclick="closedLocSp()" />
+                            <br/>
+                         Lọc theo khoảng giá </br>
+                        <div>
+                           
+                            <input type="text" id="idprice1" value="" placeholder="0"/>
+                            &nbsp;đến&nbsp;
+                            <input type="text" id="idprice2" value="" placeholder="1,000,000"/></br></br>
+                            
+                        </div>
+                        Lọc theo thể loại </br>
+                        <select id="keycate" >
+                            <option value="">All</option>
+                            <option value="a">Thiếu Nhi</option>
+                            <option value="b"> Trinh Thám </option>
+                            <option value="c"> Tình Cảm </option>
+                            <option value="d"> Truyện Tranh </option>
+                        </select>
+                        </br>
+                        
+                        <button type="button" onclick="clickOkLoc()">OK</button>
+                        
+                    </form>    
+                </div>
                 
             </div>
             
@@ -548,7 +562,6 @@
             createActiveId();
             checkActive();
             //localStorage.clear();
-            //GiaTienThanhNumber();
             console.log(localStorage.getItem('activeId'));
             //console.log(localStorage.getItem('product'));
             
