@@ -587,6 +587,18 @@ function PageIndex(){
     for(var z=1;z<=temp;z++)
         switch(id)
     {
+         case 'gioithieu':
+            s=GioiThieu();
+            document.getElementById("content").innerHTML="<div id='gioithieu'><p>"+s+"</p></div>"+
+                    "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
+                    "<span>THANH NGA</br>Chủ chính của cửa hàng, zui zẻ hòa đồng</span></div>"+
+                    "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
+                    "<span>NGÔ NGÂN</br>Hiền lành, tính nóng như kem</span></div>"+
+                    "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
+                    "<span>LANCHING</br>Ai cũm quen biết</span></div>"+
+                    "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
+                    "<span>HÙNG NGUYỄN</br>Nhân viên đắc lực, chống lưng cho công ty</span></div>";
+            
         case 'timkiem'+z:
             var temptimkim=JSON.parse(localStorage.getItem('finding'));
             tempArray=chunkArray(temptimkim);
@@ -884,4 +896,12 @@ function chunkArray(a){
         tempArray.push(myChunk);
     }
     return tempArray;
+}
+
+function GioiThieu(){
+    return "Xin chào mọi người, chào mừng các bạn đến với cửa hàng sách mang tên MagicBook nghĩa là cuốn sách ma thuật. Ý "+
+"tưởng cửa hàng sách này đến với mình rất đơn giản, chỉ là tình cờ thích đọc sách và thầy mỗi câu chuyện mà sách mang lại cho chúng"+
+" ta đều thật sâu sắc, ý nghĩa, dù nó chỉ toàn những con chữ nhưng lại cô đọng rất nhiều cảm xúc, đem lại cho độc giả nhiều "+
+"tâm trạng. Đến với MagicBook các bạn sẽ được cảm nhận những quyển sách mới tinh, sự chăm sóc đặc biệt của đội ngũ nhân"+
+" viên cửa hàng. Đừng ngại ngần mà hãy nhanh chóng đặt sách để trải nghiệm hành trình với chúng mình nhé!";
 }
