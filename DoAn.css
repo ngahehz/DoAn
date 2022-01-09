@@ -281,6 +281,31 @@ nav{
     width: 100%;
 }
 
+.litleppmn2{
+    margin-left: 45px;
+    margin-right: 45px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-size: 25px;
+    border-top: solid 3px black;
+    padding-top: 10px
+}
+
+.litleppmn2 span{
+    margin-left: 45px;
+    text-align: left
+}
+
+#gioithieu{
+    width: 90%;
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 6%;
+}
+
+
 #bs{
     text-align: center;
     font-family: 'Itim';
