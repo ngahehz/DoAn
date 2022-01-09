@@ -565,11 +565,11 @@ function Banner(){
     id= id[1];
     
     if(id.includes('a'))
-        document.getElementById("slideshow").innerHTML="<img id='img11' src='https://b-f4-zpcloud.zdn.vn/7697154842809176494/9e6b31536ad0a18ef8c1.jpg' alt='Error'/>";
+        document.getElementById("slideshow").innerHTML="<img id='img11' src='./a.jpg' alt='Error'/>";
     else if(id.includes('b'))
         document.getElementById("slideshow").innerHTML="<img id='img22' src='./b.jpg' alt='Error'/>";
     else if(id.includes('c'))       
-        document.getElementById("slideshow").innerHTML="<img id='img33' src='https://f14.photo.talk.zdn.vn/6830142803729521321/ec1847ad6d2ea670ff3f.jpg' alt='Error'/>";
+        document.getElementById("slideshow").innerHTML="<img id='img33' src='./c.jpg' alt='Error'/>";
     else if(id.includes('d'))          
         document.getElementById("slideshow").innerHTML="<img id='img44' src='./d.jpg' alt='Error'/>";
 }
