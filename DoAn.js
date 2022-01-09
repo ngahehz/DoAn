@@ -169,6 +169,7 @@ function PushIntoCart(z,i,x){
     if(JSON.parse(localStorage.getItem('activeId'))===-1){
         document.getElementById("modal2").style.display="block";
         document.getElementById("warningindex").style.display="flex";
+        document.getElementById("warningtext").innerHTML="Đăng nhập rồi mới mua hàng bạn nhé <3!";
     }
     else  {
         var tempArray;
@@ -595,7 +596,7 @@ function PageIndex(){
             
             var t=document.getElementsByClassName("sp");
             for (var i = 0; i < t.length; i++){
-                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Lỗi hình òi"/>'+ '<div class="infobs" onclick="clickInfoTimKiem('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
+                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Error"/>'+ '<div class="infobs" onclick="clickInfoTimKiem('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
             }
             break;
             
@@ -608,7 +609,7 @@ function PageIndex(){
             
             var t=document.getElementsByClassName("sp");
             for (var i = 0; i < t.length; i++){
-                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Lỗi hình òi"/>'+ '<div class="infobs" onclick="clickInfoThieuNhi('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
+                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Error"/>'+ '<div class="infobs" onclick="clickInfoThieuNhi('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
             }
             break;
                 
@@ -620,7 +621,7 @@ function PageIndex(){
             
             var t=document.getElementsByClassName("sp");
             for (var i = 0; i < t.length; i++){
-                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Lỗi hình òi"/>'+ '<div class="infobs" onclick="clickInfoTrinhTham('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
+                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Error"/>'+ '<div class="infobs" onclick="clickInfoTrinhTham('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
             }
             break;
          
@@ -632,7 +633,7 @@ function PageIndex(){
             
             var t=document.getElementsByClassName("sp");
             for (var i = 0; i < t.length; i++){
-                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Lỗi hình òi"/>'+ '<div class="infobs" onclick="clickInfoTinhCam('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
+                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Error"/>'+ '<div class="infobs" onclick="clickInfoTinhCam('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
             }
             break;
              
@@ -644,7 +645,7 @@ function PageIndex(){
             
             var t=document.getElementsByClassName("sp");
             for (var i = 0; i < t.length; i++){
-                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Lỗi hình òi"/>'+ '<div class="infobs" onclick="clickInfoTruyenTranh('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
+                t[i].innerHTML = '<img src="'+tempArray[z-1][i].img+'" alt="Error"/>'+ '<div class="infobs" onclick="clickInfoTruyenTranh('+z+','+i+')">'+tempArray[z-1][i].name+'</br>'+PhienDichGiaTien(tempArray[z-1][i].price)+'</div>';
             }
             break;
                
