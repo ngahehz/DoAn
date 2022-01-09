@@ -592,11 +592,11 @@ function PageIndex(){
             document.getElementById("content").innerHTML="<div id='gioithieu'><p>"+s+"</p></div>"+
                     "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
                     "<span>THANH NGA</br>Chủ chính của cửa hàng, zui zẻ hòa đồng</span></div>"+
-                    "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
+                    "<div class='litleppmn2'> <img class='img' src='https://f5-zpcloud.zdn.vn/3665744604366962672/dbf72b8f48eb85b5dcfa.jpg'/>"+
                     "<span>NGÔ NGÂN</br>Hiền lành, tính nóng như kem</span></div>"+
-                    "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
+                    "<div class='litleppmn2'> <img class='img' src='https://f4-zpcloud.zdn.vn/247266026749323382/272b54347dc6b698efd7.jpg'/>"+
                     "<span>LANCHING</br>Ai cũm quen biết</span></div>"+
-                    "<div class='litleppmn2'> <img class='img' src='https://b.f8.photo.talk.zdn.vn/1092555837968149459/4c4f5378d38b18d5419a.jpg'/>"+
+                    "<div class='litleppmn2'> <img class='img' src='https://f4-zpcloud.zdn.vn/5648894370665997060/cf98c764a3006e5e3711.jpg'/>"+
                     "<span>HÙNG NGUYỄN</br>Nhân viên đắc lực, chống lưng cho công ty</span></div>";
             
         case 'timkiem'+z:
