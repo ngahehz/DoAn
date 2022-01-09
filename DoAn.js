@@ -63,7 +63,7 @@ function signUp(){
 function clickInfoBS(i){
     document.getElementById("modal1").style.display="block";
     document.getElementById("info").style.display="block";
-    document.getElementById("left_info").innerHTML="<img src='"+bestSelling[i].img+"'alt='Lỗi hình òi'/>";
+    document.getElementById("left_info").innerHTML="<img src='"+bestSelling[i].img+"'alt='Error'/>";
     document.getElementById("r1_info").innerHTML=bestSelling[i].name;
     document.getElementById("r2_info").innerHTML="Giá tiền:"+PhienDichGiaTien(bestSelling[i].price)+"<br>Tác giả: "+bestSelling[i].author+"<br>Thể loại: "+PhienDichRaTheLoai(bestSelling[i].cate);
     document.getElementById("r3_info").innerHTML="<button type='button' onclick='PushIntoCart("+0+","+i+",0)'>Thêm vào giỏ hàng</button>";
@@ -74,7 +74,7 @@ function clickInfoThieuNhi(z,i){
     tempArray=chunkArray(thieunhiArray);
     document.getElementById("modal1").style.display="block";
     document.getElementById("info").style.display="block";
-    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Lỗi hình òi'/>";
+    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Error'/>";
     document.getElementById("r1_info").innerHTML=tempArray[z-1][i].name;
     document.getElementById("r2_info").innerHTML="Giá tiền:"+PhienDichGiaTien(tempArray[z-1][i].price)+"<br>Tác giả: "+tempArray[z-1][i].author+"<br>Thể loại: "+PhienDichRaTheLoai(tempArray[z-1][i].cate);
     document.getElementById("r3_info").innerHTML="<button type='button' onclick='PushIntoCart("+z+","+i+",1)'>Thêm vào giỏ hàng</button>";
@@ -86,7 +86,7 @@ function clickInfoTrinhTham(z,i){
     tempArray=chunkArray(trinhthamArray);
     document.getElementById("modal1").style.display="block";
     document.getElementById("info").style.display="block";
-    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Lỗi hình òi'/>";
+    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Error'/>";
     document.getElementById("r1_info").innerHTML=tempArray[z-1][i].name;
     document.getElementById("r2_info").innerHTML="Giá tiền:"+PhienDichGiaTien(tempArray[z-1][i].price)+"<br>Tác giả: "+tempArray[z-1][i].author+"<br>Thể loại: "+PhienDichRaTheLoai(tempArray[z-1][i].cate);
     document.getElementById("r3_info").innerHTML="<button type='button' onclick='PushIntoCart("+z+","+i+",2)'>Thêm vào giỏ hàng</button>";
@@ -97,7 +97,7 @@ function clickInfoTinhCam(z,i){
     tempArray=chunkArray(tinhcamArray);
     document.getElementById("modal1").style.display="block";
     document.getElementById("info").style.display="block";
-    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Lỗi hình òi'/>";
+    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Error'/>";
     document.getElementById("r1_info").innerHTML=tempArray[z-1][i].name;
     document.getElementById("r2_info").innerHTML="Giá tiền:"+PhienDichGiaTien(tempArray[z-1][i].price)+"<br>Tác giả: "+tempArray[z-1][i].author+"<br>Thể loại: "+PhienDichRaTheLoai(tempArray[z-1][i].cate);
     document.getElementById("r3_info").innerHTML="<button type='button' onclick='PushIntoCart("+z+","+i+",3)'>Thêm vào giỏ hàng</button>";
@@ -108,7 +108,7 @@ function clickInfoTruyenTranh(z,i){
     tempArray=chunkArray(truyentranhArray);
     document.getElementById("modal1").style.display="block";
     document.getElementById("info").style.display="block";
-    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Lỗi hình òi'/>";
+    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Error'/>";
     document.getElementById("r1_info").innerHTML=tempArray[z-1][i].name;
     document.getElementById("r2_info").innerHTML="Giá tiền:"+PhienDichGiaTien(tempArray[z-1][i].price)+"<br>Tác giả: "+tempArray[z-1][i].author+"<br>Thể loại: "+PhienDichRaTheLoai(tempArray[z-1][i].cate);
     document.getElementById("r3_info").innerHTML="<button type='button' onclick='PushIntoCart("+z+","+i+",4)'>Thêm vào giỏ hàng</button>";
@@ -119,7 +119,7 @@ function clickInfoTimKiem(z,i){
     tempArray=chunkArray(tempArray);
     document.getElementById("modal1").style.display="block";
     document.getElementById("info").style.display="block";
-    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Lỗi hình òi'/>";
+    document.getElementById("left_info").innerHTML="<img src='"+tempArray[z-1][i].img+"'alt='Error'/>";
     document.getElementById("r1_info").innerHTML=tempArray[z-1][i].name;
     document.getElementById("r2_info").innerHTML="Giá tiền:"+PhienDichGiaTien(tempArray[z-1][i].price)+"<br>Tác giả: "+tempArray[z-1][i].author+"<br>Thể loại: "+PhienDichRaTheLoai(tempArray[z-1][i].cate);
     document.getElementById("r3_info").innerHTML="<button type='button' onclick='PushIntoCart("+z+','+i+",5)'>Thêm vào giỏ hàng</button>";
@@ -158,7 +158,7 @@ function HienThiBestSelling(){
     var t=document.getElementsByClassName("sp");
     for(var i=0;i<t.length;i++){
         console.log(bestSelling[i].img);
-        t[i].innerHTML = '<img src="'+bestSelling[i].img+'" alt="Lỗi hình òi"/>'
+        t[i].innerHTML = '<img src="'+bestSelling[i].img+'" alt="Error"/>'
                               + '<div class="infobs" onclick="clickInfoBS('+i+')">'+bestSelling[i].name+'</br>'+PhienDichGiaTien(bestSelling[i].price)+'</div>';
     }
 }
@@ -565,13 +565,13 @@ function Banner(){
     id= id[1];
     
     if(id.includes('a'))
-        document.getElementById("slideshow").innerHTML="<img id='img11' src='https://b-f4-zpcloud.zdn.vn/7697154842809176494/9e6b31536ad0a18ef8c1.jpg' alt='Lỗi hình òi'/>";
+        document.getElementById("slideshow").innerHTML="<img id='img11' src='https://b-f4-zpcloud.zdn.vn/7697154842809176494/9e6b31536ad0a18ef8c1.jpg' alt='Error'/>";
     else if(id.includes('b'))
-        document.getElementById("slideshow").innerHTML="<img id='img22' src='https://b.f7.photo.talk.zdn.vn/1651298723928187096/188379f8257bee25b76a.jpg' alt='Lỗi hình òi'/>";
+        document.getElementById("slideshow").innerHTML="<img id='img22' src='./b.jpg' alt='Error'/>";
     else if(id.includes('c'))       
-        document.getElementById("slideshow").innerHTML="<img id='img33' src='https://f14.photo.talk.zdn.vn/6830142803729521321/ec1847ad6d2ea670ff3f.jpg' alt='Lỗi hình òi'/>";
+        document.getElementById("slideshow").innerHTML="<img id='img33' src='https://f14.photo.talk.zdn.vn/6830142803729521321/ec1847ad6d2ea670ff3f.jpg' alt='Error'/>";
     else if(id.includes('d'))          
-        document.getElementById("slideshow").innerHTML="<img id='img44' src='../../BaiTap/public_html/img/d.jpg' alt='Lỗi hình òi'/>";
+        document.getElementById("slideshow").innerHTML="<img id='img44' src='./d.jpg' alt='Error'/>";
 }
 
 function PageIndex(){
