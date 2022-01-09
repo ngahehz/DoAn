@@ -352,6 +352,7 @@ function clickOkLoc(){
     if(document.getElementById("idprice2").value)
         price2=GiaTienThanhNumber(document.getElementById("idprice2").value);
     theloai=document.getElementById("keycate").value;
+    closedLocSp();
 }
 
 function timkiemsanpham(){
