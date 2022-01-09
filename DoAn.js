@@ -3,8 +3,10 @@ function main(){
 }
 /*BIEN TOAN CUC*/
 var numberOfCartProduct=-1;
+var price1;
+var price2;
+var theloai;
 let finding=[];
-let TimKiemSanPham=[];
 
 /* NUT CLOSE O CAC TRANG */
 function closedWarningIndex(){
@@ -40,6 +42,11 @@ function AcpPushIntoCart(){
     closedWarningIndex();
     closedInfoIndex();
     signIn();
+}
+
+function closedLocSp(){
+    document.getElementById("modal1").style.display="none";
+    document.getElementById("locSp").style.display="none";
 }
 
 /*HIEN THI LEN CAC MODAL*/
@@ -140,6 +147,10 @@ function Warning(i){
     numberOfDelProduct=i;
 }
 
+function clickLocSp(){
+    document.getElementById("modal1").style.display="block";
+    document.getElementById("locSp").style.display="flex";
+}
 /*HIEN THI GIAO DIEN*/
 
 function HienThiBestSelling(){
@@ -203,14 +214,16 @@ function xemGioHang(){
         var s="";
         document.getElementById("modal1").style.display="block";
         document.getElementById("cart").style.display="block";
-        for(var i=0;i<temp.length;i++){
-            s=s+'<div class="mini_info"><div class="info1">'+(i+1)+'</div><div class="info2"><img src="'+temp[i].img+
-                    '" alt="Lỗi hình òi"/></div><div class="info3">'+temp[i].name+
-                    '</div><div class="info4"><input min="1" class="ip4" type="number" value="'+temp[i].soluong+'" onchange="tinhTien('+(i+1)+','+temp[i].price+')"></div><div class="info5">'+
-                    PhienDichGiaTien(temp[i].price*temp[i].soluong)+'</div><div class="info6"><input type="button" id="del" value="Xóa" onclick="xoaSanPhamOGioHang('+i+')"/></div> </div>';
+        if(temp!==null){
+            for(var i=0;i<temp.length;i++){
+                s=s+'<div class="mini_info"><div class="info1">'+(i+1)+'</div><div class="info2"><img src="'+temp[i].img+
+                        '" alt="Lỗi hình òi"/></div><div class="info3">'+temp[i].name+
+                        '</div><div class="info4"><input min="1" class="ip4" type="number" value="'+temp[i].soluong+'" onchange="tinhTien('+(i+1)+','+temp[i].price+')"></div><div class="info5">'+
+                        PhienDichGiaTien(temp[i].price*temp[i].soluong)+'</div><div class="info6"><input type="button" id="del" value="Xóa" onclick="xoaSanPhamOGioHang('+i+')"/></div> </div>';
+            }
+            document.getElementById("big_info").innerHTML=s;
+            document.getElementById("tongtien").innerHTML=PhienDichGiaTien(tongTien());
         }
-        document.getElementById("big_info").innerHTML=s;
-        document.getElementById("tongtien").innerHTML=PhienDichGiaTien(tongTien());
     }
 }
 
@@ -274,11 +287,13 @@ function tinhTien(i,a){
 }
 
 function AcpThanhToan(){
-    createBillListAndPushBill();
+    if(createBillListAndPushBill()===1){
+        closedWarningIndex();
+        window.localStorage.removeItem('cart');
+        alert("Thanh toán thành công !! Cám ơn bạn đã mua hàng <3");
+        window.location.reload();
+    }
     closedWarningIndex();
-    window.localStorage.removeItem('cart');
-    alert("Thanh toán thành công !! Cám ơn bạn đã mua hàng <3");
-    window.location.reload();
 }
 
 function AcpLogout(){
@@ -331,34 +346,48 @@ function changeTT(i){
     localStorage.setItem('billList',JSON.stringify(tempArray));
 }
 
+function clickOkLoc(){
+    if(document.getElementById("idprice1").value)
+        price1=GiaTienThanhNumber(document.getElementById("idprice1").value);
+    if(document.getElementById("idprice2").value)
+        price2=GiaTienThanhNumber(document.getElementById("idprice2").value);
+    theloai=document.getElementById("keycate").value;
+}
+
 function timkiemsanpham(){
+    console.log(price1);
+    console.log(price2);
+    console.log(theloai);
     var tempArray;
     tempArray  = JSON.parse(localStorage.getItem('product'));
-    var keycate=document.getElementById("keycate").value;
     var tukhoa=document.getElementById("tukhoa").value;
-    var keyprice=document.getElementById("keyprice").value;
-    if((!tukhoa)&&(!keycate)&&(!keyprice)){
+    if((!tukhoa)&&(!theloai)&&(!price1)&&(!price2)){
         alert("điều kiện lọc chưa ổn");
         return false;
     }
+    if(price1&&!price2||!price1&&price2){
+        alert("hãy điền giá ở cả hai mục");
+        return false;
+    }
+        
     for(var i=0;i<tempArray.length;i++){
-        if(keycate&&tukhoa&&keyprice){
-            if((keycate===tempArray[i].cate)&&(checkTenSP(tempArray[i].name,tukhoa))&&(checkKhoangGia(tempArray[i].price,keyprice))){
+        if(theloai&&tukhoa&&price1&&price2){
+            if((theloai===tempArray[i].cate)&&(checkTenSP(tempArray[i].name,tukhoa))&&(checkKhoangGia(tempArray[i].price,price1,price2))){
                 finding.push(tempArray[i]);
             }
         }
-        else if(keycate&&tukhoa){
-            if((keycate===tempArray[i].cate)&&(checkTenSP(tempArray[i].name,tukhoa))){
+        else if(theloai&&tukhoa){
+            if((theloai===tempArray[i].cate)&&(checkTenSP(tempArray[i].name,tukhoa))){
                 finding.push(tempArray[i]);
             }
         }
-         else if(keycate&&keyprice){
-            if((keycate===tempArray[i].cate)&&(checkKhoangGia(tempArray[i].price,keyprice))){
+         else if(theloai&&price1&&price2){
+            if((theloai===tempArray[i].cate)&&(checkKhoangGia(tempArray[i].price,price1,price2))){
                 finding.push(tempArray[i]);
             }
         }
-         else if(tukhoa&&keyprice){
-            if((checkTenSP(tempArray[i].name,tukhoa))&&(checkKhoangGia(tempArray[i].price,keyprice))){
+         else if(tukhoa&&price1&&price2){
+            if((checkTenSP(tempArray[i].name,tukhoa))&&(checkKhoangGia(tempArray[i].price,price1,price2))){
                 finding.push(tempArray[i]);
             }
         }
@@ -367,17 +396,22 @@ function timkiemsanpham(){
                 finding.push(tempArray[i]);
             }
         }
-         else if(keyprice){
-            if(checkKhoangGia(tempArray[i].price,keyprice)){
+         else if(price1&&price2){
+            if(checkKhoangGia(tempArray[i].price,price1,price2)){
                 finding.push(tempArray[i]);
             }
         }
          else
-            if(keycate===tempArray[i].cate){
+            if(theloai===tempArray[i].cate){
                 finding.push(tempArray[i]);
             }
     }
-    creatTemp(finding);
+    if(finding.length===0){
+        alert("Không có sản phẩm phù hợp yêu cầu");
+        return false;
+    }
+        
+    localStorage.setItem('finding',JSON.stringify(finding));
     window.location="index.html?timkiem1";
 }
 
@@ -387,35 +421,10 @@ function checkTenSP(a,b){
     return false;
 }
 
-function checkKhoangGia(a,b){
-    switch(b){
-        case 'a':
-            if(a<50000)return true;
-            return false;
-        case 'b':
-            if(a<=100000&&a>=50000)return true;
-            break;
-        case 'c':
-            if(a>=100000&&a<=200000)return true;
-            return false;
-        case 'd':
-            if(a>=200000)return true;
-            return false;
-    }
+function checkKhoangGia(a,b,c){
+    if(a>=b&&a<=c)
+        return true;
     return false;
-}
-
-function oninputne(a){
-    var tempArray = JSON.parse(localStorage.getItem('product'));
-    const temp = tempArray.filter(value => {
-        return value.name.toUpperCase().includes(a.toUpperCase());
-    });
-       
-    var t='<table class="table1" width="80%"><tr><th style="width:7%">Id</th><th style="width:14%">Thể loại</th><th style="width:10%">Ảnh</th><th style="width:30%">Tên sản phẩm</th><th style="width:10%">Giá</th><th style="width:15%">Tác giả</th><th style="width:7%">Type</th><th style="width:7%"></th></tr>';
-    for(var i=0;i<temp.length;i++)
-        t+='<tr><td>'+temp[i].productid+'</td><td>'+PhienDichRaTheLoai(temp[i].cate)+'</td><td><img src="'+temp[i].img+'"alt="Chưa có hình !"/></td><td>'+temp[i].name+'</td><td>'+PhienDichGiaTien(temp[i].price)+'</td><td>'+tempArray[i].author+'</td><td>'+temp[i].type+
-            '</td><td><form><input type="button" class="del" value="Xóa" onclick="Warning('+i+')"/><input type="button" class="fix" value="Sửa" onclick="fixProduct('+i+')"/></form></td></tr>';
-    document.getElementById('r2_table').innerHTML=t+'</table>';
 }
 
 /* CHECK MOI THU*/
@@ -644,10 +653,6 @@ function PageIndex(){
 };
 
 /*TAO MOI THU*/
-function creatTemp(a){
-    localStorage.setItem('finding',JSON.stringify(a));
-}
-
 function createAdmin(){
     let userArray=[] ;
     if(localStorage.getItem('user')===null){
@@ -698,18 +703,22 @@ function createCartAndPushProduct(a){
 }
 
 function createBillListAndPushBill(){
+    var temp=JSON.parse(localStorage.getItem('cart'));
+    if(temp===null){
+        alert("Chưa có món hàng nào!");
+        return 0;
+    }
     let tempBillList=[];
     let tempLS=[];
     var today=new Date();
     var usertemp=JSON.parse(localStorage.getItem('user'));
-    var temp=JSON.parse(localStorage.getItem('cart'));
     var bill ={};
     bill.idUser=JSON.parse(localStorage.getItem('activeId'));
     bill.ngay= today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
     bill.trangThai="";
     bill.tongTien=GiaTienThanhNumber(document.getElementById("tongtien").innerHTML);
     bill.info= temp;
-    console.log(usertemp[bill.idUser].billed);
+    //console.log(usertemp[bill.idUser].billed);
     if(!usertemp[bill.idUser].billed){
         tempLS.push(bill);
         usertemp[bill.idUser].billed=tempLS;
@@ -719,7 +728,7 @@ function createBillListAndPushBill(){
         usertemp[bill.idUser].billed.push(bill);
         localStorage.setItem('user',JSON.stringify(usertemp));
     }
-    
+  
     if(localStorage.getItem('billList')===null){
         bill.idBill=0;
         tempBillList.push(bill);
@@ -731,7 +740,8 @@ function createBillListAndPushBill(){
         temp.push(bill);
         localStorage.setItem('billList',JSON.stringify(temp));
     }
-    console.log(localStorage.getItem('billList'));
+    //console.log(localStorage.getItem('billList'));
+    return 1;
 }
 
 function createFinishedBill(bill){
@@ -746,16 +756,6 @@ function createFinishedBill(bill){
         localStorage.setItem('FinishedBill',JSON.stringify(temp));
     }
     console.log(localStorage.getItem('FinishedBill'));
-}
-
-
-/*SHOW MOI THU*/
-
-function StringCate(){
-    s="<select id='keyCate'><option value=''>Thể Loại</option>"
-            +"<option value='a'>Thiếu Nhi</option><option value='b'>Trinh Thám</option>"
-            +"<option value='c'>Tình Cảm</option><option value='d'>Truyện Tranh</option></select>";
-    return s;
 }
 
 /*SAN PHAM*/
